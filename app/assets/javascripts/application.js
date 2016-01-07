@@ -15,7 +15,6 @@
 //= require jquery-ui
 //= require tether
 //= require bootstrap
-//= require turbolinks
 //= require tag-it
 //= require jquery.nested_attributes
 //= require_tree .

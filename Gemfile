@@ -14,6 +14,17 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'slim-rails'
 
+  # Boostrap
+  gem 'sprockets-rails'
+  gem 'bootstrap'
+  gem 'bootstrap_form'
+
+
+source 'https://rails-assets.org' do
+  # Used with bootstrap
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
+
 group :development, :test do
   gem 'byebug'
 end

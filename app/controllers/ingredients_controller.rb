@@ -45,6 +45,15 @@ class IngredientsController < ApplicationController
     redirect_to ingredients_url, notice: 'Ingredient was successfully destroyed.'
   end
 
+  # GET /ingredients/:q
+  def autocomplete
+    ingredients = Ingredient.autocomplete_query(params[:q])
+
+    respond_to do |format|
+      format.json { render :json => ingredients }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_ingredient

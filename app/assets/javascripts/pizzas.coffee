@@ -3,3 +3,12 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
   $('#ingredients').tagit
+    tagSource: (search, showChoices) ->
+      that = this
+      $.ajax
+        url: '/ingredients/autocomplete.json'
+        data: q: search.term
+        success: (choices) ->
+          showChoices that._subtractArray(choices, that.assignedTags())
+          return
+      return

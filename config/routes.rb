@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
-  resources :ingredients
   root 'pizzas#index'
 
+  resources :ingredients do
+    collection do
+      get :autocomplete
+    end
+  end
+
   resources :pizza, :as => :pizzas, :controller => "pizzas"
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

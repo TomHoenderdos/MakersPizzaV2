@@ -1,5 +1,6 @@
 class Ingredient < ActiveRecord::Base
-  belongs_to :pizza
+  has_many :pizza_ingredients
+  has_many :pizza, through: :pizza_ingredients
   validates :name, presence: true
 
   def self.autocomplete_query(query)

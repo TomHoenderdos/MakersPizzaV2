@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :ingredients
   root 'pizzas#index'
 
   resources :pizza, :as => :pizzas, :controller => "pizzas"

@@ -13,10 +13,12 @@ class PizzasController < ApplicationController
   # GET /pizzas/new
   def new
     @pizza = Pizza.new
+    @pizza.ingredients.build
   end
 
   # GET /pizzas/1/edit
   def edit
+    @pizza.ingredients.build
   end
 
   # POST /pizzas
@@ -53,6 +55,6 @@ class PizzasController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def pizza_params
-      params.require(:pizza).permit(:name)
+      params.require(:pizza).permit(:name, ingredients_attributes: [:id, :name, :_destroy])
     end
 end

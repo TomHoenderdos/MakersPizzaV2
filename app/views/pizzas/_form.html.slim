@@ -1,6 +1,15 @@
-= bootstrap_form_for @pizza do |f|
+= form_for @pizza do |f|
   = f.text_field :name
 
   ul#ingredients
+
+  input#allIngredients(style="display:none")
+
+  #container
+    = f.fields_for :ingredients do |i|
+      .ingredient_fields
+        .field
+          = i.text_field :name
+          = i.check_box :_destroy
 
   = f.submit 'Save', :class => "btn btn-primary"

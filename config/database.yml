@@ -1,0 +1,19 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: MakersPizza_v2_development
+
+test:
+  <<: *default
+  database: MakersPizza_v2_test
+
+production:
+  <<: *default
+  database: MakersPizza_v2_production
+  username: MakersPizza_v2
+  password: <%= ENV['MAKERSPIZZA_DATABASE_PASSWORD'] %>

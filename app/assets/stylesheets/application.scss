@@ -1,5 +1,3 @@
-@import "general";
-
 @import "bootstrap";
 @import "rails_bootstrap_forms";
 
@@ -7,3 +5,7 @@
 @import "jquery-ui/ui-lightness";
 
 @import "pizzas";
+
+#menu {
+  padding-top: 20px
+}
